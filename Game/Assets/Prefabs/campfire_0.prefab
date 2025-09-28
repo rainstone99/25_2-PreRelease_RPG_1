@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5049576011319520510}
   - component: {fileID: 1700812943398469628}
-  - component: {fileID: 3454601530019231992}
+  - component: {fileID: 2760334161843357654}
+  - component: {fileID: 991351850819740925}
   m_Layer: 0
   m_Name: campfire_0
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6084711936022183385, guid: c60e8b41ec4bd6f4e8fed2dd9943b0ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -88,8 +89,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &3454601530019231992
-EdgeCollider2D:
+--- !u!114 &2760334161843357654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215549812886857309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: GameUiManager, Assembly-CSharp
+          m_MethodName: OpenMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!61 &991351850819740925
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,21 +153,14 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.2712273, y: -0.20635617}
-  - {x: 0.1592294, y: -0.3033527}
-  - {x: -0.2209177, y: -0.2895162}
-  - {x: -0.27786148, y: -0.2210508}
-  - {x: -0.16884744, y: -0.053381413}
-  - {x: -0.14388597, y: 0.22809964}
-  - {x: -0.026254654, y: 0.33167332}
-  - {x: 0.05560893, y: 0.27507746}
-  - {x: 0.0890066, y: 0.2052498}
-  - {x: 0.10890448, y: -0.030646414}
-  - {x: 0.23777759, y: -0.122862965}
-  - {x: 0.26931125, y: -0.2052896}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0

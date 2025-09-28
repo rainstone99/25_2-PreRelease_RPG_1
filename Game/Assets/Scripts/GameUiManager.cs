@@ -17,7 +17,10 @@ public class GameUiManager : MonoBehaviour, IPointerClickHandler
     {
         PopUi[0].SetActive(true);
     }
-
+    public void OffMap()
+    {
+        PopUi[0].SetActive(false);
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         OpenMap();

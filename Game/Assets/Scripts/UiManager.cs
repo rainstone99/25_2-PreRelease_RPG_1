@@ -6,7 +6,6 @@ public class UiManager : MonoBehaviour
 {
     public TMP_InputField playerNameInput;
     public GameObject[] popUpUi; // 0: 닉네임 입력창 1: 닉네임 경고창 2: 에러창
-    private string playerName = null;
     void Awake()
     {
 
@@ -22,7 +21,7 @@ public class UiManager : MonoBehaviour
     }
     public void PlayerName()
     {
-        playerName = playerNameInput.text;
+        string playerName = playerNameInput.text;
         if (playerName.Length > 0)
         {
             PlayerPrefs.SetString("PlayerName", playerName);
@@ -44,7 +43,6 @@ public class UiManager : MonoBehaviour
     public void GameStart()
     {
         PlayerName();
-        Debug.Log(playerName.Length);
     }
     public void Alert()
     {
