@@ -6,7 +6,7 @@ public class IncounterScript : MonoBehaviour
     private Vector2[] markPoint = new Vector2[4];
     public GameObject map;
     private RectTransform mapPoint;
-    
+    private RectTransform iconPoint;
     private float xPoint = -600f;
     void Awake()
     {
@@ -18,8 +18,6 @@ public class IncounterScript : MonoBehaviour
     }
     void Start()
     {
-        mapPoint = map.GetComponent<RectTransform>();
-        mapPoint.anchoredPosition = Vector2.zero;
         MapMarkerSpawn();
     }
 
@@ -29,9 +27,12 @@ public class IncounterScript : MonoBehaviour
     }
     void MapMarkerAdd(GameObject prefab, Vector2 point)
     {
+        mapPoint = map.GetComponent<RectTransform>();
+        iconPoint = prefab.GetComponent<RectTransform>();
+        iconPoint.anchoredPosition = Vector2.zero;
         GameObject mapMark = Instantiate(prefab, point, Quaternion.identity, mapPoint);
     }
-    void MapMarkerSpawn() //제작 중 for문 써서 x좌표값 +400씩 4번 반복해서 4개의 인카운터 랜덤생성하게
+    void MapMarkerSpawn() //for문으로 x좌표값 +400씩 4번 반복해서 4개의 인카운터 랜덤생성하게
     {
         // markPoint[0] = new Vector2(-600f, 0f);
         // markPoint[1] = new Vector2(-200f, 0f);
@@ -42,7 +43,7 @@ public class IncounterScript : MonoBehaviour
             int randomIncounter = Random.Range(0, 4);
             MapIconPoint point = new MapIconPoint(xPoint);
             markPoint[i] = point.IconPoint;
-        switch (randomIncounter)
+            switch (randomIncounter)
             {
                 case 0: //몬스터
                     MapMarkerAdd(prefab[0], markPoint[i]);
