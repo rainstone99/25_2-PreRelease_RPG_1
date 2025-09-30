@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Charater : MonoBehaviour
 {
@@ -11,7 +12,22 @@ public class Charater : MonoBehaviour
     }
     void Update()
     {
-        
+
+    }
+    void HitPlayer(Collider2D collider2D)
+    {
+
+    }
+    void AttackPlayer(Collider2D collider2D)
+    {
+        if (player.Hp == 0)
+        {
+            Destroy(this);
+        }
+    }
+    void ODestroy()
+    {
+        SceneManager.LoadScene("GamaOver");
     }
 }
 class Player // 캡술화 테스트
