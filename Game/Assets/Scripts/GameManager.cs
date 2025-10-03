@@ -2,7 +2,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] otherManager;
+    public GameObject otherManager;
+    // private static GameManager instance; // 전역에서 사용되는 변수만 저장
+
+    // public static GameManager Instance
+    // {
+    //     get
+    //     {
+    //         if (null == instance)
+    //         {
+    //             return null;
+    //         }
+    //         return instance;
+    //     }
+    // }
+    // void Awake()
+    // {
+    //     if (instance == null)
+    //     {
+    //         instance = this;
+            
+    //         DontDestroyOnLoad(this.gameObject);
+    //     }
+    //     else
+    //     {
+    //         Destroy(this.gameObject);
+    //     }
+    // }
     void Start()
     {
         

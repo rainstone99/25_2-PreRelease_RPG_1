@@ -22,7 +22,7 @@ public class Charater : MonoBehaviour
     {
         if (player.Hp == 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
     void ODestroy()
