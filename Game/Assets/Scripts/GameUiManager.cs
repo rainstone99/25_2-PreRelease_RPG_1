@@ -10,12 +10,9 @@ public class GameUiManager : MonoBehaviour
     public GameObject[] mapIcon; //0: 전투, 1: 전투, 2: 휴식, 3: 전투, 4: 상점, 5: 전투, 6: 다음 층
     public GameObject[] arrow; // 화살표 7개
     public TextMeshProUGUI[] uiText;
-    public int CurrentFloor { get; private set; }
-    public int CurrentChapter { get; private set; }
 
     void Start()
     {
-        StartGame();
         ArrowActive();
     }
     void Update()
@@ -36,18 +33,6 @@ public class GameUiManager : MonoBehaviour
         popUi[Ui].SetActive(false); // 그냥 꺼버림
     }
 
-    // 게임 시작 시
-    public void StartGame()
-    {
-        if (CurrentChapter == 0)
-        {
-            CurrentChapter = 1;
-        }
-        if (CurrentFloor == 0)
-        {
-            CurrentFloor = 1;
-        }
-    }
 
     // 화살표 활성화 (현재 스테이지 표시)
     public void StageMove(GameObject arrow)
@@ -57,24 +42,24 @@ public class GameUiManager : MonoBehaviour
             case true:
                 if (arrow.name == "LocationArrow(1)" || arrow.name == "LocationArrow(2)" || arrow.name == "LocationArrow(4)" || arrow.name == "LocationArrow(6)")
                 {
-                    SceneManager.LoadScene("InGameScene");
-                    CurrentChapter += 1;
+                    SceneManager.LoadScene("BattleScene");
+                    GameManager.Instance.CurrentChapter += 1;
                 }
                 else if (arrow.name == "LocationArrow(3)")
                 {
                     SceneManager.LoadScene("HealScene");
-                    CurrentChapter += 1;
+                    GameManager.Instance.CurrentChapter += 1;
                 }
                 else if (arrow.name == "LocationArrow(5)")
                 {
                     SceneManager.LoadScene("StoreScene");
-                    CurrentChapter += 1;
+                    GameManager.Instance.CurrentChapter += 1;
                 }
                 else if (arrow.name == "LocationArrow(7)")
                 {
                     SceneManager.LoadScene("LobbyScene");
-                    CurrentFloor += 1;
-                    CurrentChapter = 1;
+                    GameManager.Instance.CurrentFloor += 1;
+                    GameManager.Instance.CurrentChapter = 1;
                 }
                 break;
             case false:
@@ -85,7 +70,7 @@ public class GameUiManager : MonoBehaviour
     {
         for (int i = 0; i < arrow.Length; i++)
         {
-            arrow[i].SetActive(i == CurrentChapter - 1);
+            arrow[i].SetActive(i == GameManager.Instance.CurrentChapter - 1);
         }
     }
 
@@ -110,10 +95,7 @@ public class GameUiManager : MonoBehaviour
     // 텍스트
     public void Ui()
     {
-        uiText[0].text = CurrentFloor + "층";
+        uiText[0].text = GameManager.Instance.CurrentFloor + "층";
     }
-    public void Clear()
-    {
-        CurrentChapter += 1;
-    }
+    
 }
