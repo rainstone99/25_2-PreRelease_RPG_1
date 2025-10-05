@@ -6,9 +6,18 @@
             "id": "d40a63fd-f31e-46a4-ba9d-148f44c6e933",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Computer",
                     "type": "Button",
-                    "id": "09f72121-254a-43a3-ac61-30762ab12e54",
+                    "id": "cb89a2e9-29bf-4a66-b659-3d378051f49b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SmartPhone",
+                    "type": "Button",
+                    "id": "dd86aa36-c3e6-4cd0-bdaa-5bf39042c43a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -18,12 +27,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "86d9b9d0-4462-4055-bdd7-8913df16991b",
+                    "id": "a37ea079-fced-4f73-922f-90e216c8c377",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Computer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c431368a-6a36-4a60-a57b-b758df851b00",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SmartPhone",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -31,66 +51,6 @@
         }
     ],
     "controlSchemes": [
-        {
-            "name": "Keyboard&Mouse",
-            "bindingGroup": "Keyboard&Mouse",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Gamepad",
-            "bindingGroup": "Gamepad",
-            "devices": [
-                {
-                    "devicePath": "<Gamepad>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Touch",
-            "bindingGroup": "Touch",
-            "devices": [
-                {
-                    "devicePath": "<Touchscreen>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Joystick",
-            "bindingGroup": "Joystick",
-            "devices": [
-                {
-                    "devicePath": "<Joystick>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "XR",
-            "bindingGroup": "XR",
-            "devices": [
-                {
-                    "devicePath": "<XRController>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
         {
             "name": "New Control Scheme",
             "bindingGroup": "New Control Scheme",

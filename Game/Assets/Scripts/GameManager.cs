@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
-    public int CurrentFloor { get; set; }
-    public int CurrentChapter { get; set; }
+    public int CurrentFloor { get; set; } = 1;
+    public int CurrentChapter { get; set; } = 1;
+    public bool AttackTurn { get; set; } = true;
     void Awake()
     {
         if (instance == null)

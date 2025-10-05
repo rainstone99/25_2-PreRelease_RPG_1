@@ -1,7 +1,5 @@
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameUiManager : MonoBehaviour
@@ -14,6 +12,7 @@ public class GameUiManager : MonoBehaviour
     void Start()
     {
         ArrowActive();
+        Debug.Log("현재 스테이지 : " + GameManager.Instance.CurrentChapter);
     }
     void Update()
     {
